@@ -1,0 +1,54 @@
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+gui.ResetOnSpawn = false
+
+local close = Instance.new("TextButton", gui)
+close.Size = UDim2.new(0, 30, 0, 30)
+close.Position = UDim2.new(1, -35, 0, 5)
+close.Text = "X"
+close.BackgroundColor3 = Color3.new(1, 0, 0)
+close.TextColor3 = Color3.new(1, 1, 1)
+close.ZIndex = 100
+
+close.MouseButton1Click:Connect(function()
+	gui:Destroy()
+end)
+
+StarterGui:SetCore("SendNotification", {Title = "Welcome", Text = "Welcome to Delta Executor!!", Duration = 2})
+task.wait(2)
+StarterGui:SetCore("SendNotification", {Title = "Ready?", Text = "Are you ready to go into exploiting?", Duration = 2})
+task.wait(2)
+StarterGui:SetCore("SendNotification", {Title = "Sign in into Delta", Text = "Sign in into Delta exec so you can start exploiting!", Duration = 2})
+
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(1, 0, 1, 0)
+frame.BackgroundColor3 = Color3.new(1, 1, 1)
+
+local textbox1 = Instance.new("TextBox", frame)
+textbox1.Size = UDim2.new(0, 300, 0, 40)
+textbox1.Position = UDim2.new(0.5, -150, 0.4, -50)
+textbox1.PlaceholderText = "Sign in (your name)"
+
+local textbox2 = Instance.new("TextBox", frame)
+textbox2.Size = UDim2.new(0, 300, 0, 40)
+textbox2.Position = UDim2.new(0.5, -150, 0.4, 10)
+textbox2.PlaceholderText = "Sign in (your display)"
+
+local enter = Instance.new("TextButton", frame)
+enter.Size = UDim2.new(0, 200, 0, 40)
+enter.Position = UDim2.new(0.5, -100, 0.4, 70)
+enter.Text = "Enter sign in"
+
+enter.MouseButton1Click:Connect(function()
+	if textbox1.Text == "" or textbox2.Text == "" then
+		StarterGui:SetCore("SendNotification", {Title = "Sign in", Text = "Sign in to start (edit)", Duration = 2})
+	else
+		frame:Destroy()
+		StarterGui:SetCore("SendNotification", {Title = "Start exploiting", Text = "Congrats! You completed the sign in! start exploiting!!!", Duration = 2})
+		task.wait(2)
+		gui:Destroy()
+	end
+end)
