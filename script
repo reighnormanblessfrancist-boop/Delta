@@ -19,11 +19,13 @@ close.MouseButton1Click:Connect(function()
 	gui:Destroy()
 end)
 
-StarterGui:SetCore("SendNotification", {Title = "Welcome", Text = "Welcome to (edit)!", Duration = 2})
+StarterGui:SetCore("SendNotification", {Title = "Delta info", Text = "Delta, everyones favorite choice on mobile and android.", Duration = 2})
+task.wait(5)
+StarterGui:SetCore("SendNotification", {Title = "Welcome", Text = "Welcome to Delta executor!", Duration = 2})
 task.wait(2)
-StarterGui:SetCore("SendNotification", {Title = "Ready?", Text = "Are you ready to go into (edit)?", Duration = 2})
+StarterGui:SetCore("SendNotification", {Title = "Ready?", Text = "Are you ready to go into exploiting?", Duration = 2})
 task.wait(2)
-StarterGui:SetCore("SendNotification", {Title = "Sign in into (edit)", Text = "Sign in into (edit) so you can start (edit)!", Duration = 2})
+StarterGui:SetCore("SendNotification", {Title = "Sign in into Delta", Text = "Sign in into Delta so you can start exploiting!", Duration = 2})
 
 local frame = Instance.new("Frame", gui)
 frame.Size = UDim2.new(0, 400, 0, 260)
@@ -76,10 +78,10 @@ Instance.new("UICorner", enter).CornerRadius = UDim.new(0, 8)
 
 enter.MouseButton1Click:Connect(function()
 	if textbox1.Text == "" or textbox2.Text == "" then
-		StarterGui:SetCore("SendNotification", {Title = "Sign in", Text = "Sign in to start (edit)", Duration = 2})
+		StarterGui:SetCore("SendNotification", {Title = "Sign in", Text = "Sign in to start exploiting.", Duration = 2})
 	else
 		frame:Destroy()
-		StarterGui:SetCore("SendNotification", {Title = "Start (edit)", Text = "Congrats! You completed the sign in! start (edit)!", Duration = 2})
+		StarterGui:SetCore("SendNotification", {Title = "Start exploiting", Text = "Congrats! You completed the sign in! start exploiting!", Duration = 2})
 		task.wait(2)
 		gui:Destroy()
 	end
