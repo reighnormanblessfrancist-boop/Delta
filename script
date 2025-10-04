@@ -7,47 +7,79 @@ gui.ResetOnSpawn = false
 
 local close = Instance.new("TextButton", gui)
 close.Size = UDim2.new(0, 30, 0, 30)
-close.Position = UDim2.new(1, -35, 0, 5)
+close.Position = UDim2.new(1, -40, 0, 10)
 close.Text = "X"
-close.BackgroundColor3 = Color3.new(1, 0, 0)
+close.BackgroundColor3 = Color3.fromRGB(255, 60, 60)
 close.TextColor3 = Color3.new(1, 1, 1)
-close.ZIndex = 100
-
+close.Font = Enum.Font.SourceSansBold
+close.TextSize = 20
+close.ZIndex = 10
+close.AutoButtonColor = false
 close.MouseButton1Click:Connect(function()
 	gui:Destroy()
 end)
 
-StarterGui:SetCore("SendNotification", {Title = "Welcome", Text = "Welcome to Delta Executor!!", Duration = 2})
+StarterGui:SetCore("SendNotification", {Title = "Welcome", Text = "Welcome to (edit)!", Duration = 2})
 task.wait(2)
-StarterGui:SetCore("SendNotification", {Title = "Ready?", Text = "Are you ready to go into exploiting?", Duration = 2})
+StarterGui:SetCore("SendNotification", {Title = "Ready?", Text = "Are you ready to go into (edit)?", Duration = 2})
 task.wait(2)
-StarterGui:SetCore("SendNotification", {Title = "Sign in into Delta", Text = "Sign in into Delta exec so you can start exploiting!", Duration = 2})
+StarterGui:SetCore("SendNotification", {Title = "Sign in into (edit)", Text = "Sign in into (edit) so you can start (edit)!", Duration = 2})
 
 local frame = Instance.new("Frame", gui)
-frame.Size = UDim2.new(1, 0, 1, 0)
-frame.BackgroundColor3 = Color3.new(1, 1, 1)
+frame.Size = UDim2.new(0, 400, 0, 260)
+frame.Position = UDim2.new(0.5, -200, 0.5, -130)
+frame.BackgroundColor3 = Color3.fromRGB(245, 245, 245)
+frame.BorderSizePixel = 0
+frame.BackgroundTransparency = 0
+frame.AnchorPoint = Vector2.new(0.5, 0.5)
+
+local corner = Instance.new("UICorner", frame)
+corner.CornerRadius = UDim.new(0, 12)
+
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, 0, 0, 40)
+title.BackgroundTransparency = 1
+title.Text = "Sign In"
+title.TextColor3 = Color3.fromRGB(0, 0, 0)
+title.Font = Enum.Font.SourceSansBold
+title.TextSize = 28
 
 local textbox1 = Instance.new("TextBox", frame)
-textbox1.Size = UDim2.new(0, 300, 0, 40)
-textbox1.Position = UDim2.new(0.5, -150, 0.4, -50)
+textbox1.Size = UDim2.new(0.8, 0, 0, 40)
+textbox1.Position = UDim2.new(0.1, 0, 0.35, -20)
 textbox1.PlaceholderText = "Sign in (your name)"
+textbox1.Font = Enum.Font.SourceSans
+textbox1.TextSize = 18
+textbox1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+textbox1.TextColor3 = Color3.new(0, 0, 0)
+Instance.new("UICorner", textbox1).CornerRadius = UDim.new(0, 8)
 
 local textbox2 = Instance.new("TextBox", frame)
-textbox2.Size = UDim2.new(0, 300, 0, 40)
-textbox2.Position = UDim2.new(0.5, -150, 0.4, 10)
+textbox2.Size = UDim2.new(0.8, 0, 0, 40)
+textbox2.Position = UDim2.new(0.1, 0, 0.55, -20)
 textbox2.PlaceholderText = "Sign in (your display)"
+textbox2.Font = Enum.Font.SourceSans
+textbox2.TextSize = 18
+textbox2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+textbox2.TextColor3 = Color3.new(0, 0, 0)
+Instance.new("UICorner", textbox2).CornerRadius = UDim.new(0, 8)
 
 local enter = Instance.new("TextButton", frame)
-enter.Size = UDim2.new(0, 200, 0, 40)
-enter.Position = UDim2.new(0.5, -100, 0.4, 70)
+enter.Size = UDim2.new(0.5, 0, 0, 40)
+enter.Position = UDim2.new(0.25, 0, 0.75, 0)
 enter.Text = "Enter sign in"
+enter.Font = Enum.Font.SourceSansBold
+enter.TextSize = 20
+enter.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+enter.TextColor3 = Color3.new(1, 1, 1)
+Instance.new("UICorner", enter).CornerRadius = UDim.new(0, 8)
 
 enter.MouseButton1Click:Connect(function()
 	if textbox1.Text == "" or textbox2.Text == "" then
 		StarterGui:SetCore("SendNotification", {Title = "Sign in", Text = "Sign in to start (edit)", Duration = 2})
 	else
 		frame:Destroy()
-		StarterGui:SetCore("SendNotification", {Title = "Start exploiting", Text = "Congrats! You completed the sign in! start exploiting!!!", Duration = 2})
+		StarterGui:SetCore("SendNotification", {Title = "Start (edit)", Text = "Congrats! You completed the sign in! start (edit)!", Duration = 2})
 		task.wait(2)
 		gui:Destroy()
 	end
